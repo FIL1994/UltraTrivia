@@ -1,0 +1,11 @@
+{
+  "presets": ["react", "env", "stage-1"],
+  "plugins": [
+    ["transform-regenerator", {
+      "asyncGenerators": true,
+      "generators": true,
+      "async": true
+    }],
+    "syntax-async-functions"
+  ]
+}
