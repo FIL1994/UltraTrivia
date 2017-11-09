@@ -2,7 +2,20 @@ const webpack = require('webpack');
 const isProduction = process.env.NODE_ENV === "production";
 
 const prodProps = !isProduction ? [] : [
-  new webpack.optimize.ModuleConcatenationPlugin()
+  new webpack.optimize.ModuleConcatenationPlugin(),
+  new webpack.optimize.UglifyJsPlugin({
+    mangle: {},
+    mangleProperties: {
+      screw_ie8: false,
+    },
+    compress: {
+      screw_ie8: false,
+    },
+    output: {
+      screw_ie8: false
+    },
+    comments: false
+  })
 ];
 
 module.exports = {

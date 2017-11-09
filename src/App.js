@@ -1,15 +1,22 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 
-import _ from 'lodash';
+import Home from './components/pages/Home';
+import Quiz from './components/pages/Quiz';
 
 class App extends Component {
   render() {
 
     return(
-      <div>
-        <h2>App</h2>
-      </div>
+      <BrowserRouter>
+        <div id="site" className="site">
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/quiz/" component={Quiz}/>
+            <Redirect to="/"/>
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }
