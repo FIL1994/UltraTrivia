@@ -1,0 +1,11 @@
+.quiz-slide {
+  height: 300px;
+  line-height: 200px;
+  vertical-align: middle;
+}
+
+.quiz-slide span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 200px;
+}
