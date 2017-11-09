@@ -6,6 +6,7 @@
 export default [
   {
     name: "Nintendo Trivia",
+    uniqueID: "nintendo",
     colour: "#C62828",
     questions: [
       {question: "When was Nintendo founded?", answers: ["1981", "1889", "1893", "1942"], correct: 1},
@@ -37,6 +38,7 @@ export default [
   },
   {
     name: "Sega Trivia",
+    uniqueID: "sega",
     colour: "#1565C0",
     questions: [
       {question: "When was Sega founded?", answers: ["1960", "1978", "1889", "1980"], correct: 0},
@@ -68,6 +70,7 @@ export default [
   },
   {
     name: "SNK Trivia",
+    uniqueID: "snk",
     colour: "#1E88E5",
     questions: [
       {question: "When was SNK founded?", answers: ["1960", "1978", "1948", "1982"], correct: 1},
