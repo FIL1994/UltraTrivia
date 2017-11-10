@@ -9,11 +9,12 @@ class Home extends Component {
   constructor(props) {
     super(props);
 
+    this.renderSwiper = this.renderSwiper.bind(this);
     this.renderSlides = this.renderSlides.bind(this);
   }
 
   renderSlides() {
-    let slides = quizes.map(({name, colour, uniqueID}) => {
+    return quizes.map(({name, colour, uniqueID}) => {
       return(
         <Slide key={name} className="quiz-slide" style={{backgroundColor: colour}}>
           <span>
@@ -25,7 +26,9 @@ class Home extends Component {
         </Slide>
       );
     });
+  }
 
+  renderSwiper() {
     return(
       <Swiper
         swiperOptions={{
@@ -37,7 +40,7 @@ class Home extends Component {
         }}
         className="text-light"
       >
-        {slides}
+        {this.renderSlides()}
       </Swiper>
     );
   }
@@ -52,7 +55,7 @@ class Home extends Component {
             <Link to="/quiz" className="btn btn-primary btn-lg">Quiz</Link>
           </div>
           <br/><br/>
-          {this.renderSlides()}
+          {this.renderSwiper()}
         </div>
       </Page>
     );

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import _ from 'lodash';
 
-import {Page, Divider} from '../SpectreCSS';
+import {Page, Divider, Parallax} from '../SpectreCSS';
 import quizes from '../../quizes';
 
 class Quiz extends Component {
@@ -21,6 +21,15 @@ class Quiz extends Component {
         <Link to="/" className="btn btn-lg">Home</Link>
         <br/>
         {_.isEmpty(quiz) ? <Redirect to="/"/> : null}
+        <br/>
+        <div className="col-4">
+          <Parallax
+            topLeft={() => console.log("top left")} topRight={() => console.log("top right")}
+            bottomLeft={() => console.log("bottom left")} bottomRight={() => console.log("bottom right")}
+          >
+            <button type="button" className="btn btn-lg col-12 p-2">Button 3</button>
+          </Parallax>
+        </div>
       </Page>
     );
   }

@@ -51,3 +51,31 @@ export const Page = (props) => {
 
   return <div {...props} className={className}/>;
 };
+
+export const Parallax = (props) => {
+  const {children, title, topLeft, topRight, bottomLeft, bottomRight} = props;
+  let className = "parallax", myProps = {...props};
+
+  // add the className prop to the className
+  className = addClass(className, props.className);
+
+  // remove unnecessary props
+  myProps = _.omit(props, ['children', 'title', 'topLeft', 'topRight', 'bottomLeft', 'bottomRight']);
+
+  return (
+    <div {...myProps} className={className}>
+      <div className="parallax-top-left" onClick={topLeft}/>
+      <div className="parallax-top-right" onClick={topRight}/>
+      <div className="parallax-bottom-left" onClick={bottomLeft}/>
+      <div className="parallax-bottom-right" onClick={bottomRight}/>
+      <div className="parallax-content">
+        <div className="parallax-front">
+          <h2>{title}</h2>
+        </div>
+        <div className="parallax-back">
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
