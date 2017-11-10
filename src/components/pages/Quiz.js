@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import _ from 'lodash';
 
-import {Page, Divider, Parallax} from '../SpectreCSS';
+import {Button, Page, Divider, Parallax} from '../SpectreCSS';
 import quizes from '../../quizes';
 
 class Quiz extends Component {
@@ -15,6 +15,8 @@ class Quiz extends Component {
     };
 
     this.fetchQuiz = this.fetchQuiz.bind(this);
+    this.renderAnswer = this.renderAnswer.bind(this);
+    this.renderQuizDone = this.renderQuizDone.bind(this);
   }
 
   fetchQuiz() {
@@ -31,14 +33,19 @@ class Quiz extends Component {
     return true;
   }
 
-  renderAnswer(answer, key) {
+  renderAnswer(answer, index, key) {
     return (
-      <div className="column col-6 centered" key={key}>
+      <div className="column col-6 centered" onClick={() => {
+        let {correct} = this.state.quiz.questions[this.state.questionNum];
+        const rightAnswer = correct === index;
+        console.log(`Right answer: ${rightAnswer}`);
+        this.setState({questionNum: this.state.questionNum + 1});
+      }} key={key}>
         <Parallax
           topLeft={() => console.log("top left")} topRight={() => console.log("top right")}
           bottomLeft={() => console.log("bottom left")} bottomRight={() => console.log("bottom right")}
         >
-          <button type="button" className="btn btn-lg col-12 p-2">{answer}</button>
+          <Button large block children={answer}/>
         </Parallax>
       </div>
     );
@@ -46,23 +53,33 @@ class Quiz extends Component {
 
   renderQuestions(quiz) {
     const {questionNum} = this.state;
-    const {question, answers} = quiz.questions[questionNum];
-    console.log("Quiz", quiz);
+    if(questionNum >= quiz.questions.length) {
+      return this.renderQuizDone();
+    }
+    let {question, answers} = quiz.questions[questionNum];
 
     return(
       <div>
         <h5>{question}</h5>
         <div className="columns col-gapless">
           {
-            _.shuffle(answers).map((answer, index) => {
-              return this.renderAnswer(answer, `${questionNum}-${index}`);
-            })
+            _.shuffle(answers.map((answer, index) => {
+              return this.renderAnswer(answer, index, `${questionNum}-${index}`);
+            }))
           }
         </div>
         <br/>
         <div>
           Question {questionNum+1} of {quiz.questions.length}
         </div>
+      </div>
+    );
+  }
+
+  renderQuizDone() {
+    return (
+      <div>
+        Quiz is done!
       </div>
     );
   }

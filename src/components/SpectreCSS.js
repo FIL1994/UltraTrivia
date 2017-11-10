@@ -51,13 +51,13 @@ export const Button = (props) => {
   }
 
   // remove unnecessary props
-  let myProps = _.omit(props, ['small', 'large']);
+  let myProps = _.omit(props, ['small', 'large', 'block', 'primary']);
   // if type is not specified default to type button
   if(_.isEmpty(myProps.type)) {
     myProps.type = "button";
   }
 
-  return <button {...props} className={className}/>;
+  return <button {...myProps} className={className}/>;
 };
 
 /**
