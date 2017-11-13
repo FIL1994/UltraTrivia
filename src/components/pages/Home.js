@@ -20,7 +20,7 @@ class Home extends Component {
   }
 
   renderSlides() {
-    return quizes.map(({name, colour, uniqueID}) => {
+    return quizes.reverse().map(({name, colour, uniqueID}) => {
       return(
         <Slide key={name} className="quiz-slide" style={{backgroundColor: colour}}>
           <span>

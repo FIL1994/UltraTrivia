@@ -7,41 +7,9 @@
 
 export default [
   {
-    name: "Nintendo Trivia",
-    uniqueID: "nintendo",
-    colour: "#C62828",
-    questions: [
-      {question: "When was Nintendo founded?", answers: ["1981", "1889", "1893", "1942"], correct: 1},
-      {question: "When was the NES released in Japan?", answers: ["1985", "1979", "1983", "1984"], correct: 2},
-      {question: "Who was the producer of Metroid(1986)?", answers: ["Fusajiro Yamauchi", "Yoshio Sakamoto", "Satoru Iwata", "Gunpei Yokoi"], correct: 3},
-      {question: "When was the SNES released in North America?", answers: ["1991", "1992", "1989", "1990"], correct: 0},
-      {question: "Who succeeded Hiroshi Yamauchi as president of Nintendo?", answers: ["Fusajiro Yamauchi", "Shigeru Miyamoto", "Satoru Iwata", "Tsunekazu Ishihara"], correct: 2},
-      {question: "When was Super Mario Bros. 3 released in North America?", answers: ["1989", "1988", "1991", "1990"], correct: 3},
-      {question: "Who is the producer of Super Mario RPG?", answers: ["Kazuhiko Aoki", "Chihiro Fujioka", "Shigeru Miyamoto", "Gunpei Yokoi"], correct: 2},
-      {question: "What is the Super Nintendo Entertainment System called in Japan?", answers: ["Super Famico", "Super Famicom", "Ultra Arigatou", "Super Comboy"], correct: 1},
-      {question: "What did Star Fox make use of to have 3D graphics?", answers: ["Super FX", "Mode 6", "Blast Processing", "O74BY Core"], correct: 0},
-      {question: "Who is the composer of The Legend of Zelda: A Link the Past?", answers: ["Kensuke Tanabe", "Shigeru Miyamoto", "Kenji Yamamoto", "Koji Kondo"], correct: 3},
-      {question: "Who is the Space Pirate commander in Super Metroid?", answers: ["Ridley", "Sylux", "Mother Brain", "Samus"], correct: 0},
-      {question: "When was the Virtual Boy released in North America?", answers: ["1993", "1998", "1994", "1995"], correct: 3},
-      {question: "Which of the following was a launch game for the Nintendo 64?", answers: ["GoldenEye 007", "Pilotwings 64", "Star Fox 64", "F-Zero X"], correct: 1},
-      {question: "When was Super Smash Bros. released in Europe?", answers:["2000", "1999", "1997", "2001"], correct: 1},
-      {question: "How many rupees does the Deku Shield, in Ocarina of Time, cost?", answers: ["80", "40", "60", "50"], correct: 1},
-      {question: "When did Gunpei Yokoi leave Nintendo?", answers: ["1994", "1999", "1997", "1996"], correct: 3},
-      {question: "Who is the producer of Donkey Kong 64?", answers: ["David Wise", "Gregg Mayles", "Shigeru Miyamoto", "Taiki Ubukata"], correct: 2},
-      {question: "When was the Game Boy Color released in North America?", answers: ["1998", "1989", "1994", "1996"], correct: 0},
-      {question: "Which of the following was not a launch game for the Game Boy Color in the US?", answers: ["Centipede", "Tetris DX", "Pocket Bomberman", "Dr. Mario"], correct: 3},
-      {question: "What was the codename for the Gamecube?", answers: ["Revolution", "Oxygen", "Dolphin", "Project Reality"], correct: 2},
-      {question: "When was the Gamecube released in North America?", answers: ["2003", "2001", "2002", "2000"], correct: 1},
-      {question: "Who is the composer of Star Fox Adventures?", answers: ["David Wise", "Shigeru Miyamoto", "Lee Schuneman", "Koji Kondo"], correct: 0},
-      {question: "What was the codename for the Wii?", answers: ["Revolution", "Oxygen", "Dolphin", "Project Reality"], correct: 0},
-      {question: "Which of the following was not a launch game for the Wii in the US?", answers: ["Twilight Princess", "Red Steel", "Need for Speed: Carbon", "Super Mario Galaxy"], correct: 3},
-      {question: "Which of the following was not a launch game for the Wii U in the US?", answers: ["Pikmin 3", "Assassin's Creed III", "New Super Mario Bros. U", "Nintendo Land"], correct: 0}
-    ]
-  },
-  {
     name: "Sega Trivia",
     uniqueID: "sega",
-    colour: "#1565C0",
+    colour: "#011AB2",
     questions: [
       {question: "When was Sega founded?", answers: ["1960", "1978", "1889", "1980"], correct: 0},
       {question: "When was the SG-1000 released in Japan?", answers: ["1976", "1983", "1985", "1982"], correct: 1},
@@ -71,9 +39,41 @@ export default [
     ]
   },
   {
+    name: "Nintendo Trivia",
+    uniqueID: "nintendo",
+    colour: "#E60012",
+    questions: [
+      {question: "When was Nintendo founded?", answers: ["1981", "1889", "1893", "1942"], correct: 1},
+      {question: "When was the NES released in Japan?", answers: ["1985", "1979", "1983", "1984"], correct: 2},
+      {question: "Who was the producer of Metroid(1986)?", answers: ["Fusajiro Yamauchi", "Yoshio Sakamoto", "Satoru Iwata", "Gunpei Yokoi"], correct: 3},
+      {question: "When was the SNES released in North America?", answers: ["1991", "1992", "1989", "1990"], correct: 0},
+      {question: "Who succeeded Hiroshi Yamauchi as president of Nintendo?", answers: ["Fusajiro Yamauchi", "Shigeru Miyamoto", "Satoru Iwata", "Tsunekazu Ishihara"], correct: 2},
+      {question: "When was Super Mario Bros. 3 released in North America?", answers: ["1989", "1988", "1991", "1990"], correct: 3},
+      {question: "Who is the producer of Super Mario RPG?", answers: ["Kazuhiko Aoki", "Chihiro Fujioka", "Shigeru Miyamoto", "Gunpei Yokoi"], correct: 2},
+      {question: "What is the Super Nintendo Entertainment System called in Japan?", answers: ["Super Famico", "Super Famicom", "Ultra Arigatou", "Super Comboy"], correct: 1},
+      {question: "What did Star Fox make use of to have 3D graphics?", answers: ["Super FX", "Mode 6", "Blast Processing", "O74BY Core"], correct: 0},
+      {question: "Who is the composer of The Legend of Zelda: A Link the Past?", answers: ["Kensuke Tanabe", "Shigeru Miyamoto", "Kenji Yamamoto", "Koji Kondo"], correct: 3},
+      {question: "Who is the Space Pirate commander in Super Metroid?", answers: ["Ridley", "Sylux", "Mother Brain", "Samus"], correct: 0},
+      {question: "When was the Virtual Boy released in North America?", answers: ["1993", "1998", "1994", "1995"], correct: 3},
+      {question: "Which of the following was a launch game for the Nintendo 64?", answers: ["GoldenEye 007", "Pilotwings 64", "Star Fox 64", "F-Zero X"], correct: 1},
+      {question: "When was Super Smash Bros. released in Europe?", answers:["2000", "1999", "1997", "2001"], correct: 1},
+      {question: "How many rupees does the Deku Shield, in Ocarina of Time, cost?", answers: ["80", "40", "60", "50"], correct: 1},
+      {question: "When did Gunpei Yokoi leave Nintendo?", answers: ["1994", "1999", "1997", "1996"], correct: 3},
+      {question: "Who is the producer of Donkey Kong 64?", answers: ["David Wise", "Gregg Mayles", "Shigeru Miyamoto", "Taiki Ubukata"], correct: 2},
+      {question: "When was the Game Boy Color released in North America?", answers: ["1998", "1989", "1994", "1996"], correct: 0},
+      {question: "Which of the following was not a launch game for the Game Boy Color in the US?", answers: ["Centipede", "Tetris DX", "Pocket Bomberman", "Dr. Mario"], correct: 3},
+      {question: "What was the codename for the Gamecube?", answers: ["Revolution", "Oxygen", "Dolphin", "Project Reality"], correct: 2},
+      {question: "When was the Gamecube released in North America?", answers: ["2003", "2001", "2002", "2000"], correct: 1},
+      {question: "Who is the composer of Star Fox Adventures?", answers: ["David Wise", "Shigeru Miyamoto", "Lee Schuneman", "Koji Kondo"], correct: 0},
+      {question: "What was the codename for the Wii?", answers: ["Revolution", "Oxygen", "Dolphin", "Project Reality"], correct: 0},
+      {question: "Which of the following was not a launch game for the Wii in the US?", answers: ["Twilight Princess", "Red Steel", "Need for Speed: Carbon", "Super Mario Galaxy"], correct: 3},
+      {question: "Which of the following was not a launch game for the Wii U in the US?", answers: ["Pikmin 3", "Assassin's Creed III", "New Super Mario Bros. U", "Nintendo Land"], correct: 0}
+    ]
+  },
+  {
     name: "SNK Trivia",
     uniqueID: "snk",
-    colour: "#1E88E5",
+    colour: "#0097E0",
     questions: [
       {question: "When was SNK founded?", answers: ["1960", "1978", "1948", "1982"], correct: 1},
       {question: "Who founded SNK?", answers: ["Bonne Jenet", "Eiji Kisaragi", "Eikichi Kawasaki", "Ralf Jones"], correct: 2},
@@ -95,6 +95,30 @@ export default [
       {question: "When was the Neo Geo Pocket Color released in Europe?", answers: ["1993", "2001", "1991", "1999"], correct: 3},
       {question: "When did the original SNK Corporation  close?", answers: ["2001", "2003", "2004", "1999"], correct: 0},
       {question: "Which company acquired SNK's IP?", answers: ["Nintendo", "Sega", "Playmore", "Sony"], correct: 2}
+    ]
+  },
+  {
+    name: "SquareSoft Trivia",
+    uniqueID: "square",
+    colour: "#C00A24",
+    questions: [
+      {question: "When was SNK founded?", answers: ["1960", "1978", "1948", "1982"], correct: 1},
+    ]
+  },
+  {
+    name: "Capcom Trivia",
+    uniqueID: "capcom",
+    colour: "#0C4CA3",
+    questions: [
+      {question: "When was Capcom established?", answers: ["1965", "1978", "1981", "1983"], correct: 3},
+    ]
+  },
+  {
+    name: "Konami Trivia",
+    uniqueID: "konami",
+    colour: "#990014",
+    questions: [
+      {question: "When was Konami founded?", answers: ["1957", "1967", "1969", "1976"], correct: 2},
     ]
   }
 ];
