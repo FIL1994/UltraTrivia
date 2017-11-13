@@ -29,6 +29,9 @@ class Home extends Component {
   }
 
   renderSwiper() {
+    const {appContext} = this.props;
+    console.log(appContext.state);
+
     return(
       <Swiper
         swiperOptions={{

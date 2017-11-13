@@ -4,6 +4,7 @@ import _ from 'lodash';
 
 import {Button, Page, Divider, Parallax} from '../SpectreCSS';
 import quizes from '../../quizes';
+import Timer from '../Timer';
 
 class Quiz extends Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class Quiz extends Component {
 
     this.state = {
       quiz: null,
-      questionNum: 0
+      questionNum: 0,
+      correct: 0
     };
 
     this.fetchQuiz = this.fetchQuiz.bind(this);
@@ -36,12 +38,16 @@ class Quiz extends Component {
   renderAnswer(answer, index, key) {
     return (
       <div className="column col-6 centered" onClick={() => {
+        let updateState = {questionNum: this.state.questionNum + 1};
         let {correct} = this.state.quiz.questions[this.state.questionNum];
         const rightAnswer = correct === index;
-        console.log(`Right answer: ${rightAnswer}`);
-        this.setState({questionNum: this.state.questionNum + 1});
+        if(rightAnswer) {
+          updateState = {...updateState, correct: this.state.correct + 1}
+        }
+        this.setState(updateState);
       }} key={key}>
         <Parallax
+          className="parallax-button"
           topLeft={() => console.log("top left")} topRight={() => console.log("top right")}
           bottomLeft={() => console.log("bottom left")} bottomRight={() => console.log("bottom right")}
         >
@@ -52,7 +58,7 @@ class Quiz extends Component {
   }
 
   renderQuestions(quiz) {
-    const {questionNum} = this.state;
+    const {questionNum, correct} = this.state;
     if(questionNum >= quiz.questions.length) {
       return this.renderQuizDone();
     }
@@ -70,16 +76,22 @@ class Quiz extends Component {
         </div>
         <br/>
         <div>
-          Question {questionNum+1} of {quiz.questions.length}
+          Question {questionNum+1} of {quiz.questions.length} <br/>
+          Correct: {correct}
         </div>
       </div>
     );
   }
 
   renderQuizDone() {
+    const time = this.myTimer.state.seconds;
+
     return (
       <div>
-        Quiz is done!
+        Quiz is done! <br/>
+        Correct: {this.state.correct} <br/>
+        Time: {time}
+
       </div>
     );
   }
@@ -101,6 +113,7 @@ class Quiz extends Component {
         <br/>
         <br/>
         {_.isEmpty(quiz) ? "Loading..." : this.renderQuestions(quiz)}
+        <Timer ref={(myTimer) => {this.myTimer = myTimer}}/>
       </Page>
     );
   }

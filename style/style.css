@@ -9,3 +9,7 @@
   vertical-align: middle;
   line-height: 200px;
 }
+
+.parallax-button {
+  cursor: pointer;
+}
