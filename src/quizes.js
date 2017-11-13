@@ -121,4 +121,4 @@ export default [
       {question: "When was Konami founded?", answers: ["1957", "1967", "1969", "1976"], correct: 2},
     ]
   }
-];
+].reverse();

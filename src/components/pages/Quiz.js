@@ -117,6 +117,7 @@ class Quiz extends Component {
 
         this.setState({submittedScore: true});
       });
+      this.myTimer.stopCounting();
     }
 
     return (
@@ -145,7 +146,7 @@ class Quiz extends Component {
         <br/>
         <br/>
         {_.isEmpty(quiz) ? "Loading..." : this.renderQuestions(quiz)}
-        <Timer ref={(myTimer) => {this.myTimer = myTimer}}/>
+        <Timer ref={(myTimer) => {this.myTimer = myTimer;}}/>
       </Page>
     );
   }

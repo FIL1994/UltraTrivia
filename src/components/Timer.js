@@ -17,6 +17,10 @@ class Timer extends Component {
     this.updateTime = this.updateTime.bind(this);
   }
 
+  stopCounting() {
+    clearInterval(this.timeInterval);
+  }
+
   componentWillMount() {
     this.timeInterval = setInterval(this.updateTime, 1000);
   }

@@ -6,6 +6,8 @@
  */
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import _ from 'lodash';
+import localForage, {DATA_SCORES} from './data/localForage';
 
 import Home from './components/pages/Home';
 import Quiz from './components/pages/Quiz';
@@ -17,6 +19,12 @@ class App extends Component {
     this.state = {
       scores: []
     };
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    if(!_.isEqual(this.state.scores, nextState.scores)) {
+      localForage.setItem(DATA_SCORES, nextState.scores);
+    }
   }
 
   render() {
