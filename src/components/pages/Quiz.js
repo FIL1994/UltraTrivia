@@ -1,3 +1,9 @@
+/**
+ * Quiz.js
+ *
+ * @author Philip Van Raalte
+ * @date 2017-11-08
+ */
 import React, {Component} from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import _ from 'lodash';
@@ -5,6 +11,7 @@ import _ from 'lodash';
 import {Button, Page, Divider, Parallax} from '../SpectreCSS';
 import quizes from '../../quizes';
 import Timer from '../Timer';
+import Score from '../../data/Score';
 
 class Quiz extends Component {
   constructor(props) {
@@ -13,7 +20,8 @@ class Quiz extends Component {
     this.state = {
       quiz: null,
       questionNum: 0,
-      correct: 0
+      correct: 0,
+      submittedScore: false
     };
 
     this.fetchQuiz = this.fetchQuiz.bind(this);
@@ -84,14 +92,38 @@ class Quiz extends Component {
   }
 
   renderQuizDone() {
+    const {correct, quiz} = this.state;
     const time = this.myTimer.state.seconds;
+
+    if(!this.state.submittedScore) {
+      setTimeout(() => {
+        const quizScore = new Score({time, correct, id: quiz.uniqueID});
+        let {scores} = this.props.appContext.state;
+        console.log("Score", quizScore.getScore());
+
+        let oldScoreID = _.findIndex(scores, (s) => {return quiz.uniqueID === s.id});
+        let updateScore = false;
+        if(oldScoreID === -1){
+          scores.push(quizScore);
+          updateScore = true;
+        } else if(scores[oldScoreID].getScore() < quizScore.getScore()) {
+          scores[oldScoreID] = quizScore;
+          updateScore = true;
+        }
+
+        if(updateScore) {
+          this.props.appContext.setState({scores});
+        }
+
+        this.setState({submittedScore: true});
+      });
+    }
 
     return (
       <div>
         Quiz is done! <br/>
-        Correct: {this.state.correct} <br/>
+        Correct: {correct} <br/>
         Time: {time}
-
       </div>
     );
   }

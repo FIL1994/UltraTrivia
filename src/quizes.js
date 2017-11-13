@@ -1,4 +1,6 @@
-/*
+/**
+ * quizes.js
+ *
  * @author Philip Van Raalte
  * @date 2017-11-09
  */

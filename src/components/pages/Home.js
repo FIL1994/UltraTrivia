@@ -1,3 +1,9 @@
+/**
+ * Home.js
+ *
+ * @author Philip Van Raalte
+ * @date 2017-11-08
+ */
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {Swiper, Slide} from 'react-dynamic-swiper';
@@ -30,7 +36,7 @@ class Home extends Component {
 
   renderSwiper() {
     const {appContext} = this.props;
-    console.log(appContext.state);
+    console.log("App", appContext.state);
 
     return(
       <Swiper

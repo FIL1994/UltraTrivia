@@ -1,4 +1,6 @@
-/*
+/**
+ * Time.js
+ *
  * @author Philip Van Raalte
  * @date 2017-11-13
  */
@@ -28,10 +30,11 @@ class Timer extends Component {
   }
 
   render() {
+    const {seconds} = this.state;
+
     return(
       <div>
-        <h4>Timer</h4>
-        {this.state.seconds} seconds
+        {seconds} {seconds === 1 ? 'second' : 'seconds'}
       </div>
     );
   }

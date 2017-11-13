@@ -1,8 +1,12 @@
+/**
+ * index.js
+ *
+ * @author Philip Van Raalte
+ * @date 2017-11-08
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
-import {createStore, applyMiddleware} from 'redux';
-import ReduxThunk from 'redux-thunk';
 
 import App from './App';
 
