@@ -41,7 +41,7 @@ class Home extends Component {
     return(
       <Swiper
         swiperOptions={{
-          loop: true,
+          loop: false,
           slidesPerView: 1,
           centeredSlides: true,
           grabCursor: true,
@@ -55,10 +55,17 @@ class Home extends Component {
   }
 
   render() {
+    let totalScore = 0;
+    this.props.appContext.state.scores.forEach((s) => {
+      totalScore += s.getScore();
+    });
+
     return(
       <Page>
         <h1>Ultra Trivia</h1>
         <Divider className="centered" size={10}/>
+        Total Score: {totalScore}
+        <br/>
         <div>
           <div className="btn-group btn-group-block centered col-8">
             <Link to="/quiz" className="btn btn-primary btn-lg">Quiz</Link>
