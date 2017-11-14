@@ -28,27 +28,27 @@ export const Button = (props) => {
   const {small, large, block, primary} = props;
   let className = "btn";
 
-  // add the className prop to the className
-  className = addClass(className, props.className);
-
   // allow size to be passed as a string or a number
   if(!_.isEmpty(props.size) || _.isNumber(props.size)) {
     className = `${className} col-${props.size.toString().trim()}`;
   }
 
   if(large) {
-    className = `${className} btn-lg`;
+    className = addClass(className, "btn-lg");
   } else if(small) {
-    className = `${className} btn-sm`;
+    className = addClass(className, "btn-sm");
   }
 
   if(block) {
-    className = `${className} btn-block`;
+    className = addClass(className, "btn-block");
   }
 
   if(primary) {
-    className = `${className} btn-primary`;
+    className = addClass(className, "btn-primary");
   }
+
+  // add the className prop to the className
+  className = addClass(className, props.className);
 
   // remove unnecessary props
   let myProps = _.omit(props, ['small', 'large', 'block', 'primary']);
@@ -73,10 +73,32 @@ export const Divider = (props) => {
 
   // allow size to be passed as a string or a number
   if(!_.isEmpty(props.size) || _.isNumber(props.size)) {
-    className = `${className} col-${props.size.toString().trim()}`;
+    className = addClass(className, `col-${props.size.toString().trim()} centered`);
   }
 
   return <div {...props} className={className}/>;
+};
+
+/**
+ * A loading indicator.
+ * @param {Object} props Properties for the component.
+ * @return {XML} JSX Component
+ */
+export const Loading = (props) => {
+  const {large} = props;
+  let className = "loading";
+
+  if(large) {
+    className = addClass(className, "loading-lg");
+  }
+
+  // add the className prop to the className
+  className = addClass(className, props.className);
+
+  // remove unnecessary props
+  let myProps = _.omit(props, ['large']);
+
+  return <div {...myProps} className={className}/>;
 };
 
 /**

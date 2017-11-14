@@ -7,6 +7,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import _ from 'lodash';
+import {Page, Loading, Divider} from './components/SpectreCSS';
 import localForage, {DATA_SCORES} from './data/localForage';
 
 import Home from './components/pages/Home';
@@ -17,14 +18,29 @@ class App extends Component {
     super(props);
 
     this.state = {
-      scores: []
+      scores: [],
+      getSave: false
     };
   }
 
+  componentWillMount() {
+    localForage.getItem(DATA_SCORES).then(
+      (scores, error) => {
+        let newState = {getSave: true};
+        if(error) {
+          // handle error
+        } else {
+          if(_.isArray(scores)) {
+            newState = {...newState, scores};
+          }
+        }
+        this.setState({newState});
+      }
+    );
+  }
+
   componentDidUpdate(prevProps, prevState) {
-    console.log("UPDATING", prevState.scores, this.state.scores);
     if(!_.isEqual(this.state.scores, prevState.scores)) {
-      console.log("updating");
       localForage.setItem(DATA_SCORES, this.state.scores);
     }
   }
@@ -33,23 +49,32 @@ class App extends Component {
     // make this component's context available to other components
     const otherProps = {appContext: this};
     return(
-      <BrowserRouter>
-        <div id="site" className="site">
-          <Switch>
-            <Route exact path="/"
-               render={(props) => (
-                  <Home {...props} {...otherProps}/>
-                )}
-            />
-            <Route path="/quiz/:quizName?/"
-               render={(props) => (
-                 <Quiz {...props} {...otherProps}/>
-               )}
-            />
-            <Redirect to="/"/>
-          </Switch>
-        </div>
-      </BrowserRouter>
+      this.state.getSave
+        ?
+        <Page>
+          <br/>
+          <h4>Loading Save Data</h4>
+          <Divider size={8}/>
+          <Loading large/>
+        </Page>
+        :
+          <BrowserRouter>
+            <div id="site" className="site">
+              <Switch>
+                <Route exact path="/"
+                   render={(props) => (
+                      <Home {...props} {...otherProps}/>
+                    )}
+                />
+                <Route path="/quiz/:quizName?/"
+                   render={(props) => (
+                     <Quiz {...props} {...otherProps}/>
+                   )}
+                />
+                <Redirect to="/"/>
+              </Switch>
+            </div>
+          </BrowserRouter>
     );
   }
 }
