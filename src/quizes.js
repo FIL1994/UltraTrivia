@@ -102,7 +102,16 @@ export default [
     uniqueID: "square",
     colour: "#C00A24",
     questions: [
-      {question: "When was SNK founded?", answers: ["1960", "1978", "1948", "1982"], correct: 1},
+      {question: "When was Square founded?", answers: ["1960", "1978", "1948", "1982"], correct: 1},
+      {question: "When did Square merge with Enix?", answers: ["2003", "2005", "2001", "1999"], correct: 0},
+      {question: "Which game was Square's first game released?", answers: ["Thexder", "Apple Town Story", "Final Fantasy", "The Death Trap"], correct: 3},
+      {question: "What was Square's first console game?", answers: ["Final Fantasy", "Thexder", "Rad Racer", "Secret of Mana"], correct: 1},
+      {question: "When was Final Fantasy first released?", answers: ["1987", "1991", "1984", "1989"], correct: 0},
+      {question: "When was Secret of Mana first released?", answers: ["1992", "1987", "1993", "1989"], correct: 2},
+      {question: "When was Chrono Trigger first released?", answers: ["1992", "1995", "1996", "1993"], correct: 1},
+      {question: "Who was the producer of Chrono Trigger?", answers: ["Akira Toriyama", "Ryuji Sasai", "Kazuhiko Aok", "Nobuo Uematsu"], correct: 2},
+      {question: "Who was the composer on Final Fantasy VII?", answers: ["Nobuo Uematsu", "Shinji Hashimoto", "Yoshinori Kitase", "Junya Nakano"], correct: 0},
+      {question: "Where does Vagrant Story take place?", answers: ["Midgar", "Chronopolis", "Ignas", "Valendia"], correct: 3}
     ]
   },
   {
@@ -111,6 +120,15 @@ export default [
     colour: "#0C4CA3",
     questions: [
       {question: "When was Capcom established?", answers: ["1965", "1978", "1981", "1983"], correct: 3},
+      {question: "When was Street Fighter II: The World Warrior first released?", answers: ["1987", "1994", "1991", "1989"], correct: 2},
+      {question: "What system was Monster Hunter 2 first released on?", answers: ["Nintendo 64", "PlayStation 2", "Xbox", "Dreamcast"], correct: 1},
+      {question: "Who is the main antagonist of the original Mega Man series?", answers: ["Dr. Wily", "Zero", "Doctor Eggman", "Iris"], correct: 0},
+      {question: "Who is the creator of Zero?", answers: ["Harumi Fujita", "Keiji Inafune", "Nobuo Uematsu", "Hideo Kojima"], correct: 1},
+      {question: "Who was the producer of Resident Evil 2?", answers: ["Akira Yamaoka", "Hideki Kamiya", "Shinji Mikami", "Noboru Sugimura"], correct: 2},
+      {question: "When was Breath of Fire IV first released?", answers: ["1999", "2003", "1998", "2000"], correct: 3},
+      {question: "When was Capcom vs. SNK 2 released?", answers: ["2001", "2005", "2006", "2007"], correct: 0},
+      {question: "Who was the composer of 1942?", answers: ["Jeffrey Howell", "Hideki Kamiya", "Ayako Mori", "Tokuro Fujiwara"], correct: 2},
+      {question: "Who is the protagonist of Dead Rising 3", answers: ["Nick Ramos", "Naru Omori", "Chuck Greene", "Frank West"], correct: 0}
     ]
   },
   {
@@ -119,6 +137,20 @@ export default [
     colour: "#990014",
     questions: [
       {question: "When was Konami founded?", answers: ["1957", "1967", "1969", "1976"], correct: 2},
+      {question: "When did Konami start exporting products to the US?", answers: ["1974", "1982", "1971", "1979"], correct: 3},
+      {question: "When was Frogger released in Europe?", answers: ["1982", "1986", "1978", "1979"], correct: 0},
+      {question: "When was Super Cobra released?", answers: ["1977", "1981", "1988", "1990"], correct: 1},
+      {question: "What was Gradius named outside of Japan?", answers: ["Ikaruga", "Feud", "Super R-Type", "Nemesis"], correct: 3},
+      {question: "Who are the main characters in Contra?", answers: ["Bill & Lance", "Joe & Don", "Frank & Marcus", "Eiji & Izumi"], correct: 0},
+      {question: "How many levels are there in Super Castlevania IV?", answers: ["11", "20", "8", "14"], correct: 0},
+      {question: "Who do you play as in Castlevania II?", answers: ["Leonard Wolf,", "Simon Belmont", "Dracula", "Gabriel Belmont"], correct: 1},
+      {question: "When was Silent Hill 2 released?", answers: ["1999", "2003", "2001", "1998"], correct: 2},
+      {question: "Who was the composer on Silent Hill", answers: ["Trent Reznor", "Akira Yamaoka", "David Lynch", "Motoaki Furukawa"], correct: 1},
+      {question: "When was Gradius III released?", answers: ["2001", "1978", "1989", "1985"], correct: 2},
+      {question: "Which series is a spinoff of Gradius?", answers: ["Salamander", "Sine Mora", "Darius", "Radiant Silvergun"], correct: 0},
+      {question: "Who is the creator of Metal Gear?", answers: ["Kenyu Horiuchi", "Pierluigi Collina", "Gakuto Mikumo", "Hideo Kojima"], correct: 3},
+      {question: "Who is the protagonist of Metal Gear Solid 2?", answers: ["Raiden", "Ocelot", "Snake", "Kazuhira Miller"], correct: 0},
+      {question: "When was Metal Gear Solid 4 released?", answers: ["2006", "2008", "2010", "2011"], correct: 1}
     ]
   }
 ].reverse();

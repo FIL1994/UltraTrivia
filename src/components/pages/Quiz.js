@@ -98,8 +98,7 @@ class Quiz extends Component {
     if(!this.state.submittedScore) {
       setTimeout(() => {
         const quizScore = new Score({time, correct, id: quiz.uniqueID});
-        let {scores} = this.props.appContext.state;
-        console.log("Score", quizScore.getScore());
+        let scores = this.props.appContext.state.scores.slice();
 
         let oldScoreID = _.findIndex(scores, (s) => {return quiz.uniqueID === s.id});
         let updateScore = false;
@@ -112,7 +111,9 @@ class Quiz extends Component {
         }
 
         if(updateScore) {
-          this.props.appContext.setState({scores});
+          setTimeout(() => {
+            this.props.appContext.setState({scores});
+          });
         }
 
         this.setState({submittedScore: true});

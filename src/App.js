@@ -21,9 +21,11 @@ class App extends Component {
     };
   }
 
-  componentWillUpdate(nextProps, nextState) {
-    if(!_.isEqual(this.state.scores, nextState.scores)) {
-      localForage.setItem(DATA_SCORES, nextState.scores);
+  componentDidUpdate(prevProps, prevState) {
+    console.log("UPDATING", prevState.scores, this.state.scores);
+    if(!_.isEqual(this.state.scores, prevState.scores)) {
+      console.log("updating");
+      localForage.setItem(DATA_SCORES, this.state.scores);
     }
   }
 
