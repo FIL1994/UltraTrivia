@@ -111,7 +111,12 @@ export default [
       {question: "When was Chrono Trigger first released?", answers: ["1992", "1995", "1996", "1993"], correct: 1},
       {question: "Who was the producer of Chrono Trigger?", answers: ["Akira Toriyama", "Ryuji Sasai", "Kazuhiko Aok", "Nobuo Uematsu"], correct: 2},
       {question: "Who was the composer on Final Fantasy VII?", answers: ["Nobuo Uematsu", "Shinji Hashimoto", "Yoshinori Kitase", "Junya Nakano"], correct: 0},
-      {question: "Where does Vagrant Story take place?", answers: ["Midgar", "Chronopolis", "Ignas", "Valendia"], correct: 3}
+      {question: "Where does Vagrant Story take place?", answers: ["Midgar", "Chronopolis", "Ignas", "Valendia"], correct: 3},
+      {question: "When was Super Mario RPG first released?", answers: ["1992", "1996", "1998", "1989"], correct: 1},
+      {question: "Who was the producer of Parasite Eve?", answers: ["Taketoshi Nishimori", "Shinji Hashimoto", "Masaharu Iwata", "Hironobu Sakaguchi"], correct: 3},
+      {question: "Who was the producer of Chocobo Racing?", answers: ["Keiji Inafune", "Masaharu Iwata", "Shinji Hashimoto", "Toshiyuki Itahana"], correct: 2},
+      {question: "What system was Kingdom Hearts first released on?", answers: ["Gamecube", "PlayStation 2", "Xbox 360", "PlayStation 3"], correct: 1},
+      {question: "What is the leveling system called in Final Fantasy X", answers: ["L2", "Spira Points", "Active Level System", "Sphere Grid"], correct: 3}
     ]
   },
   {
@@ -128,7 +133,17 @@ export default [
       {question: "When was Breath of Fire IV first released?", answers: ["1999", "2003", "1998", "2000"], correct: 3},
       {question: "When was Capcom vs. SNK 2 released?", answers: ["2001", "2005", "2006", "2007"], correct: 0},
       {question: "Who was the composer of 1942?", answers: ["Jeffrey Howell", "Hideki Kamiya", "Ayako Mori", "Tokuro Fujiwara"], correct: 2},
-      {question: "Who is the protagonist of Dead Rising 3", answers: ["Nick Ramos", "Naru Omori", "Chuck Greene", "Frank West"], correct: 0}
+      {question: "Who is the protagonist of Dead Rising 3?", answers: ["Nick Ramos", "Naru Omori", "Chuck Greene", "Frank West"], correct: 0},
+      {question: "Who is the protagonist of Dino Crisis?", answers: ["Zero", "Regina", "Chris Redfield", "Cammy"], correct: 0},
+      {question: "When was Ōkami first released?", answers: ["2004", "2006", "2008", "2005"], correct: 1},
+      {question: "When was Resident Evil 4 first released?", answers: ["2004", "2006", "2008", "2005"], correct: 3},
+      {question: "What system was The King of Dragons released on?", answers: ["Sega Saturn", "PlayStation 4", "Super Nintendo", "Neo Geo"], correct: 2},
+      {question: "When was DuckTales 2 first released?", answers: ["1988", "1990", "1986", "1993"], correct: 3},
+      {question: "Who is the protagonist of Super Ghouls n' Ghosts?", answers: ["John", "George", "Arthur", "Frank"], correct: 2},
+      {question: "What system was Gargoyle's Quest released on?", answers: ["Game Boy", "PlayStation Portable", "Game Boy Advance", "Game Gear"], correct: 0},
+      {question: "What are the abilities called in Viewtiful Joe?", answers: ["S-Points", "VFX Powers", "Super Abilities", "Mini Gauge"], correct: 1},
+      {question: "Who was the director of Dragon's Dogma?", answers: ["Inon Zur", "Nobuyuki Matsushima", "Hideaki Itsuno", "Panta Rhei"], correct: 2},
+      {question: "When was Final Fight 3 first released?", answers: ["2014", "1989", "1995", "1993"], correct: 2},
     ]
   },
   {
