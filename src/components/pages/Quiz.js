@@ -73,7 +73,7 @@ class Quiz extends Component {
     let {question, answers} = quiz.questions[questionNum];
 
     return(
-      <div>
+      <div className="col-11 centered">
         <h5>{question}</h5>
         <div className="columns col-gapless">
           {

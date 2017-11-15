@@ -1,3 +1,8 @@
+body {
+  background: hsl(163, 64%, 5%);
+  color: #e8dddd;
+}
+
 .quiz-slide {
   height: 300px;
   line-height: 200px;
