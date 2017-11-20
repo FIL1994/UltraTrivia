@@ -7,6 +7,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {startSession, initSession} from './ng/NG_Connect';
 
 import App from './App';
 
@@ -14,3 +15,7 @@ ReactDOM.render(
   <App/>,
   document.getElementById('root')
 );
+
+// NG Start Session
+initSession();
+startSession();
