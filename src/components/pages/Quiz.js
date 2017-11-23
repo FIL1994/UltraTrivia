@@ -12,6 +12,7 @@ import {Button, Page, Divider, Parallax} from '../SpectreCSS';
 import quizes from '../../quizes';
 import Timer from '../Timer';
 import Score from '../../data/Score';
+import {unlockBottomLeft, unlockBottomRight, unlockTopLeft, unlockTopRight} from '../../ng/UnlockMedals';
 
 class Quiz extends Component {
   constructor(props) {
@@ -21,7 +22,11 @@ class Quiz extends Component {
       quiz: null,
       questionNum: 0,
       correct: 0,
-      submittedScore: false
+      submittedScore: false,
+      topLeft: 0,
+      topRight: 0,
+      bottomLeft: 0,
+      bottomRight: 0
     };
 
     this.fetchQuiz = this.fetchQuiz.bind(this);
@@ -56,8 +61,10 @@ class Quiz extends Component {
       }} key={key}>
         <Parallax
           className="parallax-button"
-          topLeft={() => console.log("top left")} topRight={() => console.log("top right")}
-          bottomLeft={() => console.log("bottom left")} bottomRight={() => console.log("bottom right")}
+          topLeft={() => this.setState({topLeft: this.state.topLeft + 1})}
+          topRight={() => this.setState({topRight: this.state.topRight + 1})}
+          bottomLeft={() => this.setState({bottomLeft: this.state.bottomLeft + 1})}
+          bottomRight={() => this.setState({bottomRight: this.state.bottomRight + 1})}
         >
           <Button large block children={answer}/>
         </Parallax>
@@ -92,8 +99,19 @@ class Quiz extends Component {
   }
 
   renderQuizDone() {
-    const {correct, quiz} = this.state;
+    const {correct, quiz, bottomRight, bottomLeft, topLeft, topRight} = this.state;
     const time = this.myTimer.state.seconds;
+
+    // check button corners medals
+    if (bottomRight === quiz.questions.length) {
+      unlockBottomRight();
+    } else if(bottomLeft === quiz.questions.length) {
+      unlockBottomLeft();
+    } else if(topRight === quiz.questions.length) {
+      unlockTopRight();
+    } else if (topLeft === quiz.questions.length) {
+      unlockTopLeft();
+    }
 
     if(!this.state.submittedScore) {
       setTimeout(() => {
