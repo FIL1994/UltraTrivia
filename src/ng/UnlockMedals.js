@@ -47,3 +47,23 @@ export function unlockTopLeft() {
 export function unlockTopRight() {
   unlockMedal("Top Right");
 }
+
+export function unlockScore5000() {
+  unlockMedal("5000");
+}
+
+export function unlockScore10000() {
+  unlockMedal("10000");
+}
+
+export function unlockScore20000() {
+  unlockMedal("20000");
+}
+
+export function unlockScore30000() {
+  unlockMedal("30000");
+}
+
+export function unlockScore40000() {
+  unlockMedal("40000");
+}

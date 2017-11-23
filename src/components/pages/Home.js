@@ -10,6 +10,8 @@ import {Swiper, Slide} from 'react-dynamic-swiper';
 
 import {Page, Divider} from '../SpectreCSS';
 import quizes from '../../quizes';
+import {unlockScore5000, unlockScore10000, unlockScore20000, unlockScore30000, unlockScore40000}
+  from '../../ng/UnlockMedals';
 
 class Home extends Component {
   constructor(props) {
@@ -54,18 +56,38 @@ class Home extends Component {
     );
   }
 
-  render() {
+  getTotalScore() {
     let totalScore = 0;
     this.props.appContext.state.scores.forEach((s) => {
-      console.log("S", s);
       totalScore += s.getScore();
     });
 
+    // check total score medals
+    if(totalScore >= 5000) {
+      unlockScore5000();
+      if(totalScore >= 10000) {
+        unlockScore10000();
+        if(totalScore >= 20000) {
+          unlockScore20000();
+          if(totalScore >= 30000) {
+            unlockScore30000();
+            if(totalScore >= 40000) {
+              unlockScore40000();
+            }
+          }
+        }
+      }
+    }
+
+    return totalScore;
+  }
+
+  render() {
     return(
       <Page>
         <h1>Ultra Trivia</h1>
         <Divider className="centered" size={10}/>
-        Total Score: {totalScore}
+        Total Score: {this.getTotalScore()}
         <br/>
         <div>
           <div className="btn-group btn-group-block centered col-8">
