@@ -12,6 +12,7 @@ import localForage, {DATA_SCORES} from './data/localForage';
 
 import Home from './components/pages/Home';
 import Quiz from './components/pages/Quiz';
+import Score from './data/Score';
 
 class App extends Component {
   constructor(props) {
@@ -31,10 +32,11 @@ class App extends Component {
           // handle error
         } else {
           if(_.isArray(scores)) {
+            scores = scores.map(s => new Score(s));
             newState = {...newState, scores};
           }
         }
-        this.setState({newState});
+        this.setState(newState);
       }
     );
   }
@@ -49,7 +51,7 @@ class App extends Component {
     // make this component's context available to other components
     const otherProps = {appContext: this};
     return(
-      this.state.getSave
+      !this.state.getSave
         ?
         <Page>
           <br/>

@@ -31,3 +31,19 @@ export function unlockSNK() {
 export function unlockSquareSoft() {
   unlockMedal("SquareSoft Trivia");
 }
+
+export function unlockBottomLeft() {
+  unlockMedal("Bottom Left");
+}
+
+export function unlockBottomRight() {
+  unlockMedal("Bottom Right");
+}
+
+export function unlockTopLeft() {
+  unlockMedal("Top Left");
+}
+
+export function unlockTopRight() {
+  unlockMedal("Top Right");
+}

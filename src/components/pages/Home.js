@@ -47,7 +47,7 @@ class Home extends Component {
           grabCursor: true,
           keyboardControl: true
         }}
-        className="text-light"
+        className="text-light col-11 centered"
       >
         {this.renderSlides()}
       </Swiper>
@@ -57,6 +57,7 @@ class Home extends Component {
   render() {
     let totalScore = 0;
     this.props.appContext.state.scores.forEach((s) => {
+      console.log("S", s);
       totalScore += s.getScore();
     });
 
