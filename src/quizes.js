@@ -4,12 +4,14 @@
  * @author Philip Van Raalte
  * @date 2017-11-09
  */
+import {unlockCapcom, unlockKonami, unlockNintendo, unlockSega, unlockSNK, unlockSquareSoft} from './ng/UnlockMedals';
 
 export default [
   {
     name: "Sega Trivia",
     uniqueID: "sega",
     colour: "#011AB2",
+    unlock: unlockSega,
     questions: [
       {question: "When was Sega founded?", answers: ["1960", "1978", "1889", "1980"], correct: 0},
       {question: "When was the SG-1000 released in Japan?", answers: ["1976", "1983", "1985", "1982"], correct: 1},
@@ -42,6 +44,7 @@ export default [
     name: "Nintendo Trivia",
     uniqueID: "nintendo",
     colour: "#E60012",
+    unlock: unlockNintendo,
     questions: [
       {question: "When was Nintendo founded?", answers: ["1981", "1889", "1893", "1942"], correct: 1},
       {question: "When was the NES released in Japan?", answers: ["1985", "1979", "1983", "1984"], correct: 2},
@@ -74,6 +77,7 @@ export default [
     name: "SNK Trivia",
     uniqueID: "snk",
     colour: "#0097E0",
+    unlock: unlockSNK,
     questions: [
       {question: "When was SNK founded?", answers: ["1960", "1978", "1948", "1982"], correct: 1},
       {question: "Who founded SNK?", answers: ["Bonne Jenet", "Eiji Kisaragi", "Eikichi Kawasaki", "Ralf Jones"], correct: 2},
@@ -101,6 +105,7 @@ export default [
     name: "SquareSoft Trivia",
     uniqueID: "square",
     colour: "#C00A24",
+    unlock: unlockSquareSoft,
     questions: [
       {question: "When was Square founded?", answers: ["1960", "1978", "1948", "1982"], correct: 1},
       {question: "When did Square merge with Enix?", answers: ["2003", "2005", "2001", "1999"], correct: 0},
@@ -123,6 +128,7 @@ export default [
     name: "Capcom Trivia",
     uniqueID: "capcom",
     colour: "#0C4CA3",
+    unlock: unlockCapcom,
     questions: [
       {question: "When was Capcom established?", answers: ["1965", "1978", "1981", "1983"], correct: 3},
       {question: "When was Street Fighter II: The World Warrior first released?", answers: ["1987", "1994", "1991", "1989"], correct: 2},
@@ -150,6 +156,7 @@ export default [
     name: "Konami Trivia",
     uniqueID: "konami",
     colour: "#990014",
+    unlock: unlockKonami,
     questions: [
       {question: "When was Konami founded?", answers: ["1957", "1967", "1969", "1976"], correct: 2},
       {question: "When did Konami start exporting products to the US?", answers: ["1974", "1982", "1971", "1979"], correct: 3},

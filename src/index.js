@@ -8,6 +8,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {startSession, initSession} from './ng/NG_Connect';
+import {unlockStartGame} from './ng/UnlockMedals';
 
 import App from './App';
 
@@ -19,3 +20,4 @@ ReactDOM.render(
 // NG Start Session
 initSession();
 startSession();
+unlockStartGame();
