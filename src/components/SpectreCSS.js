@@ -24,7 +24,7 @@ function addClass(defaultClass, newClass) {
  * @param {Object} props Properties for the component.
  * @return {XML} JSX Component
  */
-export const Button = (props) => {
+let Button = (props) => {
   const {small, large, block, primary} = props;
   let className = "btn";
 
@@ -52,13 +52,15 @@ export const Button = (props) => {
 
   // remove unnecessary props
   let myProps = _.omit(props, ['small', 'large', 'block', 'primary']);
-  // if type is not specified default to type button
-  if(_.isEmpty(myProps.type)) {
-    myProps.type = "button";
-  }
 
   return <button {...myProps} className={className}/>;
 };
+
+Button.defaultProps = {
+  type: "button"
+};
+
+export {Button};
 
 /**
  * A divider for separating elements.
@@ -66,10 +68,8 @@ export const Button = (props) => {
  * @return {XML} JSX Component
  */
 export const Divider = (props) => {
-  let className = "divider";
-
   // add the className prop to the className
-  className = addClass(className, props.className);
+  let className = addClass("divider", props.className);
 
   // allow size to be passed as a string or a number
   if(!_.isEmpty(props.size) || _.isNumber(props.size)) {
@@ -107,10 +107,8 @@ export const Loading = (props) => {
  * @return {XML} JSX Component
  */
 export const Page = (props) => {
-  let className = "page container centered text-center";
-
   // add the className prop to the className
-  className = addClass(className, props.className);
+  let className = addClass("page container", props.className);
 
   return <div {...props} className={className}/>;
 };
@@ -122,10 +120,9 @@ export const Page = (props) => {
  */
 export const Parallax = (props) => {
   const {children, title, topLeft, topRight, bottomLeft, bottomRight} = props;
-  let className = "parallax";
 
   // add the className prop to the className
-  className = addClass(className, props.className);
+  let className = addClass("parallax", props.className);
 
   // remove unnecessary props
   let myProps = _.omit(props, ['children', 'title', 'topLeft', 'topRight', 'bottomLeft', 'bottomRight']);
@@ -143,6 +140,51 @@ export const Parallax = (props) => {
         <div className="parallax-back">
           {children}
         </div>
+      </div>
+    </div>
+  );
+};
+
+export const Panel = (props) => {
+  const {children, title, footer} = props;
+
+  // add the className prop to the className
+  let className = addClass("panel", props.className);
+
+  // remove unnecessary props
+  let myProps = _.omit(props, ['children', 'title', 'footer']);
+
+  return (
+    <div {...myProps} className={className}>
+      <div className="panel-header">
+        <div className="panel-title">
+          <h5>{title}</h5>
+        </div>
+      </div>
+      <div className="panel-body">
+        {children}
+      </div>
+      <div className="panel-footer">
+        {footer}
+      </div>
+    </div>
+  );
+};
+
+export const EmptyState = (props) => {
+  const {children, title} = props;
+
+  // add the className prop to the className
+  let className = addClass("empty", props.className);
+
+  // remove unnecessary props
+  let myProps = _.omit(props, ['children', 'title']);
+
+  return(
+    <div {...myProps} className={className}>
+      <div className="empty-title h5">{title}</div>
+      <div className="empty-action">
+        {children}
       </div>
     </div>
   );
