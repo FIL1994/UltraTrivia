@@ -13,7 +13,7 @@ import _ from 'lodash';
  * Prepends the className from props to the component default className.
  * @param {String} defaultClass The default class for the component.
  * @param {String} newClass The class name to prepend to the default class. (So the default class will override it)
- * @return {String} JSX Component
+ * @returns {String} JSX Component
  */
 function addClass(defaultClass, newClass) {
   return `${_.isString(newClass) ? newClass : ''} ${defaultClass}`.trim();
@@ -22,7 +22,8 @@ function addClass(defaultClass, newClass) {
 /**
  * A simple button.
  * @param {Object} props Properties for the component.
- * @return {XML} JSX Component
+ * @returns {XML} JSX Component
+ * @constructor
  */
 let Button = (props) => {
   const {small, large, block, primary} = props;
@@ -65,7 +66,8 @@ export {Button};
 /**
  * A divider for separating elements.
  * @param {Object} props Properties for the component.
- * @return {XML} JSX Component
+ * @returns {XML} JSX Component
+ * @constructor
  */
 export const Divider = (props) => {
   // add the className prop to the className
@@ -82,7 +84,8 @@ export const Divider = (props) => {
 /**
  * A loading indicator.
  * @param {Object} props Properties for the component.
- * @return {XML} JSX Component
+ * @returns {XML} JSX Component
+ * @constructor
  */
 export const Loading = (props) => {
   const {large} = props;
@@ -104,7 +107,8 @@ export const Loading = (props) => {
 /**
  * A page for containing elements.
  * @param {Object} props Properties for the component.
- * @return {XML} JSX Component
+ * @returns {XML} JSX Component
+ * @constructor
  */
 export const Page = (props) => {
   // add the className prop to the className
@@ -116,7 +120,8 @@ export const Page = (props) => {
 /**
  * A hover parallax effect.
  * @param {Object} props Properties for the component.
- * @return {XML} JSX Component
+ * @returns {XML} JSX Component
+ * @constructor
  */
 export const Parallax = (props) => {
   const {children, title, topLeft, topRight, bottomLeft, bottomRight} = props;
@@ -145,6 +150,12 @@ export const Parallax = (props) => {
   );
 };
 
+/**
+ * A flexible view container with an auto-expand content section.
+ * @param {Object} props Properties for the component.
+ * @returns {XML} JSX Component
+ * @constructor
+ */
 export const Panel = (props) => {
   const {children, title, footer} = props;
 
@@ -171,6 +182,12 @@ export const Panel = (props) => {
   );
 };
 
+/**
+ * A placeholder for first time use, empty data and error screens.
+ * @param {Object} props Properties for the component.
+ * @returns {XML} JSX Component
+ * @constructor
+ */
 export const EmptyState = (props) => {
   const {children, title} = props;
 
