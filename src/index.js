@@ -11,6 +11,7 @@ import {startSession, initSession} from './ng/NG_Connect';
 import {unlockStartGame} from './ng/UnlockMedals';
 
 import App from './App';
+import './setupSoundJS';
 
 ReactDOM.render(
   <App/>,

@@ -84,7 +84,7 @@ class Home extends Component {
 
   render() {
     return(
-      <Page>
+      <Page className="centered text-center">
         <h1>Ultra Trivia</h1>
         <Divider className="centered" size={10}/>
         Total Score: {this.getTotalScore()}

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "build": "SET NODE_ENV='production' & node ./node_modules/webpack/bin/webpack.js -p --progress --colors",
+    "build": "SET NODE_ENV='production' & node ./node_modules/webpack/bin/webpack.js -p --progress --colors & cd scripts & build.cmd",
     "build-linux": "NODE_ENV='production' node ./node_modules/webpack/bin/webpack.js -p --progress --colors"
   },
   "author": "Philip Van Raalte",

@@ -158,7 +158,7 @@ class Quiz extends Component {
     }
 
     return(
-      <Page>
+      <Page className="centered text-center">
         <h2>{_.isEmpty(quiz) ? "Loading..." : quiz.name}</h2>
         <Divider className="centered" size={10}/>
         <Link to="/" className="btn btn-lg btn-primary">Back to Main Menu</Link>
