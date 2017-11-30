@@ -12,6 +12,7 @@ import {Button, Page, Divider, Parallax} from '../SpectreCSS';
 import quizes from '../../quizes';
 import Timer from '../Timer';
 import Score from '../../data/Score';
+import {playSong} from '../../soundjs/setupSoundJS';
 import {unlockBottomLeft, unlockBottomRight, unlockTopLeft, unlockTopRight} from '../../ng/UnlockMedals';
 
 class Quiz extends Component {
@@ -45,6 +46,7 @@ class Quiz extends Component {
         setTimeout(() => {this.setState({quiz: newQuiz});});
       }
     }
+    playSong(newQuiz.song);
     return true;
   }
 
@@ -101,6 +103,8 @@ class Quiz extends Component {
   renderQuizDone() {
     const {correct, quiz, bottomRight, bottomLeft, topLeft, topRight} = this.state;
     const time = this.myTimer.state.seconds;
+
+    quiz.unlock();
 
     // check button corners medals
     if (bottomRight === quiz.questions.length) {

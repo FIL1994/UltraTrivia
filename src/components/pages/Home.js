@@ -5,13 +5,18 @@
  * @date 2017-11-08
  */
 import React, {Component} from 'react';
+import _ from 'lodash';
 import {Link} from 'react-router-dom';
 import {Swiper, Slide} from 'react-dynamic-swiper';
 
 import {Page, Divider} from '../SpectreCSS';
 import quizes from '../../quizes';
+import Songs from '../../data/Songs';
+import {playSong} from '../../soundjs/setupSoundJS';
 import {unlockScore5000, unlockScore10000, unlockScore20000, unlockScore30000, unlockScore40000}
   from '../../ng/UnlockMedals';
+import {postScore} from '../../ng/NG_Connect';
+import {totalScoreScoreboardID} from '../../config/keys';
 
 class Home extends Component {
   constructor(props) {
@@ -62,6 +67,8 @@ class Home extends Component {
       totalScore += s.getScore();
     });
 
+    postScore(totalScore, totalScoreScoreboardID);
+
     // check total score medals
     if(totalScore >= 5000) {
       unlockScore5000();
@@ -82,7 +89,19 @@ class Home extends Component {
     return totalScore;
   }
 
+  checkSongPlaying() {
+   const {songPlaying} = window;
+
+   if(!_.isEmpty(songPlaying) && !songPlaying.src.toUpperCase().includes(Songs.Chip1.id)) {
+     console.log("false");
+     playSong(Songs.Chip1.id);
+   }
+  }
+
+
   render() {
+    this.checkSongPlaying();
+
     return(
       <Page className="centered text-center">
         <h1>Ultra Trivia</h1>
