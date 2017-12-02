@@ -4,6 +4,16 @@
  */
 class Score {
   constructor({time, correct, id}) {
+    if(time === undefined) {
+      throw "Score constructor - you must provide a 'time' property";
+    }
+    if(correct === undefined) {
+      throw "Score constructor - you must provide a 'correct' property (number of answers correct)";
+    }
+    if(id === undefined) {
+      throw "Score constructor - you must provide an 'id' property";
+    }
+
     this.time = time;
     this.correct = correct;
     this.id = id;
@@ -14,7 +24,7 @@ class Score {
     if(multiplier < 1) {
       multiplier = 1;
     }
-    return this.correct * multiplier;
+    return Math.ceil(this.correct * multiplier);
   }
 }
 
