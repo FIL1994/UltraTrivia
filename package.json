@@ -14,10 +14,10 @@
   "license": "GPL-3.0",
   "dependencies": {
     "jquery": "^3.2.1",
-    "localforage": "^1.5.3",
+    "localforage": "^1.5.5",
     "lodash": "^4.17.4",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-dynamic-swiper": "^1.1.2",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
@@ -39,8 +39,8 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "jest": "^21.2.1",
-    "react-test-renderer": "^16.1.1",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4"
+    "react-test-renderer": "^16.2.0",
+    "webpack": "^3.9.1",
+    "webpack-dev-server": "^2.9.5"
   }
 }
