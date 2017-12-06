@@ -98,7 +98,6 @@ class Home extends Component {
    }
   }
 
-
   render() {
     this.checkSongPlaying();
 
@@ -106,13 +105,11 @@ class Home extends Component {
       <Page className="centered text-center">
         <h1>Ultra Trivia</h1>
         <Divider className="centered" size={10}/>
-        Total Score: {this.getTotalScore()}
+        <div className="text-large">
+          Total Score: {this.getTotalScore()}
+        </div>
         <br/>
         <div>
-          <div className="btn-group btn-group-block centered col-8">
-            <Link to="/quiz" className="btn btn-primary btn-lg">Quiz</Link>
-          </div>
-          <br/><br/>
           {this.renderSwiper()}
         </div>
       </Page>
