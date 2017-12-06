@@ -23,4 +23,4 @@ ReactDOM.render(
 // NG Start Session
 initSession();
 startSession();
-unlockStartGame();
+setTimeout(unlockStartGame, 500);

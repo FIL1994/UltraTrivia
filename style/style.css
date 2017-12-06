@@ -17,3 +17,21 @@ body {
 .parallax-button {
   cursor: pointer;
 }
+
+.unlocked-medal {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.medal-shadow {
+  box-shadow: -1px -1px 2px #999999;
+}
+
+.left-space-1 {
+  margin-left: .15rem;
+}
+
+.top-space {
+  padding-top: 2rem;
+}

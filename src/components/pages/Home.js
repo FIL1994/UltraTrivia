@@ -30,12 +30,12 @@ class Home extends Component {
     return quizes.map(({name, colour, uniqueID}) => {
       return(
         <Slide key={name} className="quiz-slide" style={{backgroundColor: colour}}>
-          <span>
+          <div className="top-space">
             <h3>{name}</h3>
             <div className="btn-group btn-group-block centered col-6">
               <Link to={`/quiz/${uniqueID}`} className="btn btn-lg">Go to Quiz</Link>
             </div>
-          </span>
+          </div>
         </Slide>
       );
     });
