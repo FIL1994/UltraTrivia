@@ -5,7 +5,7 @@
 import {unlockMedal} from './NG_Connect';
 
 export function unlockStartGame() {
-  unlockMedal("Start Game");
+  unlockMedal("Start Game", true);
 }
 
 export function unlockCapcom() {

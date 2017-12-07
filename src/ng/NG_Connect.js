@@ -12,14 +12,31 @@ let medals = [], scoreboards = [], sessionStarted = false, medalsLoaded = false;
 const afterSessionStart = (result) => {console.log("Session has started", result);};
 const afterMedalsLoaded = () => {console.log("Medals loaded", medals);};
 
-export function startSession() {
+export function startSession(afterSessionStarted) {
   ngio.callComponent("App.startSession", {}, (result) => {
     ngio.queueComponent("Medal.getList", {}, onMedalsLoaded);
     ngio.queueComponent("ScoreBoard.getBoards", {}, onScoreboardsLoaded);
     ngio.executeQueue();
     sessionStarted = true;
     afterSessionStart(result);
+
+    if(_.isFunction(afterSessionStarted)) {
+      afterSessionStarted();
+    }
+
   }, this);
+}
+
+export function loadMedals(onGetMedals) {
+  ngio.callComponent("Medal.getList", {}, (result) => {
+    if(result.success) {
+      medals = result.medals;
+      medalsLoaded = true;
+    }
+    if(_.isFunction(onGetMedals)) {
+      onGetMedals(result);
+    }
+  });
 }
 
 export function getMedals() {
@@ -81,10 +98,14 @@ function onMedalUnlocked(medal) {
   }, 2000);
 }
 
-export function unlockMedal(medalName) {
+export function unlockMedal(medalName, force) {
   // if no user is attached to ngio object, no one is logged in and medals can't be unlocked
   if(!ngio.user) {
     return;
+  }
+
+  if(!_.isBoolean(force)) {
+    force = false;
   }
 
   let medal = _.find(medals, (medal) => {
@@ -95,7 +116,7 @@ export function unlockMedal(medalName) {
     console.log(`${medalName} was not found`);
     return;
   }
-  if(!medal.unlocked) {
+  if(force || !medal.unlocked) {
     ngio.callComponent("Medal.unlock", {id: medal.id}, ({success, medal: newMedal}) => {
       if(success) {
         onMedalUnlocked(newMedal);
@@ -142,6 +163,10 @@ export function initSession() {
       console.log("No session");
     }
   });
+}
+
+export function getUser() {
+  return ngio.user;
 }
 
 function onLoggedIn() {
