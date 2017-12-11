@@ -42,9 +42,6 @@ class Home extends Component {
   }
 
   renderSwiper() {
-    const {appContext} = this.props;
-    console.log("App", appContext.state);
-
     return(
       <Swiper
         swiperOptions={{
@@ -93,7 +90,6 @@ class Home extends Component {
    const {songPlaying} = window;
 
    if(!_.isEmpty(songPlaying) && !songPlaying.src.toUpperCase().includes(Songs.Chip1.id)) {
-     console.log("false");
      playSong(Songs.Chip1.id);
    }
   }

@@ -8,8 +8,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'lodash';
-import {startSession, initSession, loadMedals, getUser} from './ng/NG_Connect';
-import {unlockStartGame} from './ng/UnlockMedals';
+import {startSession, initSession, getMedals, getUser} from './ng/NG_Connect';
+import {unlockStartGame, NG} from './ng/UnlockMedals';
 
 import App from './App';
 import setupSoundJS from './soundjs/setupSoundJS';
@@ -23,13 +23,16 @@ ReactDOM.render(
 
 // NG Start Session
 initSession();
-startSession();
+startSession(() => {
+  NG.fetchedUser = true;
+  NG.executeQueue();
+});
 
 // Unlock start medal
 let times = 0; // Times attempted to unlock medal. This allows time to connect to the NG servers
 function goUnlockStartGame() {
   times++;
-  loadMedals((result) => {
+  getMedals((result) => {
     if(result.success) {
       let medal = result.medals.find((m) => {
         return m.name === "Start Game";
@@ -40,7 +43,7 @@ function goUnlockStartGame() {
       }
     }
     else {
-      // an error occurred wait longer before making another network request
+      // An error occurred wait longer before making another network request
       setTimeout(goUnlockStartGame, 2000);
     }
   });

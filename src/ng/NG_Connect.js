@@ -16,18 +16,19 @@ export function startSession(afterSessionStarted) {
   ngio.callComponent("App.startSession", {}, (result) => {
     ngio.queueComponent("Medal.getList", {}, onMedalsLoaded);
     ngio.queueComponent("ScoreBoard.getBoards", {}, onScoreboardsLoaded);
+
+    if(_.isFunction(afterSessionStarted)) {
+      ngio.queueComponent("Gateway.getDatetime", {}, afterSessionStarted);
+    }
+
     ngio.executeQueue();
     sessionStarted = true;
     afterSessionStart(result);
 
-    if(_.isFunction(afterSessionStarted)) {
-      afterSessionStarted();
-    }
-
   }, this);
 }
 
-export function loadMedals(onGetMedals) {
+export function getMedals(onGetMedals) {
   ngio.callComponent("Medal.getList", {}, (result) => {
     if(result.success) {
       medals = result.medals;
@@ -39,11 +40,12 @@ export function loadMedals(onGetMedals) {
   });
 }
 
-export function getMedals() {
+export function getLocalMedals() {
   return medals;
 }
 
 function onMedalsLoaded(result) {
+  console.log("medals");
   if(result.success) {
     medals = result.medals;
     medalsLoaded = true;
@@ -52,6 +54,7 @@ function onMedalsLoaded(result) {
 }
 
 function onScoreboardsLoaded(result) {
+  console.log("scoreboards");
   if(result.success) {
     scoreboards = result.scoreboards;
   }
@@ -166,7 +169,7 @@ export function initSession() {
 }
 
 export function getUser() {
-  return ngio.user;
+  return ngio.user; //user -> icons, id, name, supporter
 }
 
 function onLoggedIn() {

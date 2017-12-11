@@ -8,7 +8,7 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "build": "SET NODE_ENV='production' & node ./node_modules/webpack/bin/webpack.js -p --progress --colors & cd scripts & build.cmd",
-    "build-linux": "NODE_ENV='production' node ./node_modules/webpack/bin/webpack.js -p --progress --colors"
+    "build:linux": "NODE_ENV='production' node ./node_modules/webpack/bin/webpack.js -p --progress --colors"
   },
   "author": "Philip Van Raalte",
   "license": "GPL-3.0",
